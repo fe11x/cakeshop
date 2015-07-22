@@ -12,7 +12,7 @@ from bootloader import settings, jinja_environment, memcachedb
 from lib.filter import register_filters
 from lib.route import Route
 from lib.session import MemcacheSessionStore
-from handler import site, admin, ajax, oauth, shop, pay, user
+from handler import site, admin, ajax, oauth, shop, pay, user   # 这步会执行每个py文件里的route装饰器函数，以完成url与Handler的自动绑定 andy
 
 define('cmd', default='runserver', metavar='runserver|syncdb')
 define('port', default=8080, type=int)

@@ -7,7 +7,7 @@ from handler import AdminBaseHandler
 from lib.route import route
 from model import User, Category, CategoryAttr, Shop, ShopPic, ShopAttr, Page, Apply, Distribution, Order, OrderItem, Ad, Consult, Area, UserAddr
 
-@route(r'/admin', name='admin_index') #首页
+@route(r'/admin', name='admin_index') #首页   # 解释后的形式为：IndexHandler = Route.__init__(r'/admin',name='admin_index').__call__(IndexHandler)  #andy
 class IndexHandler(AdminBaseHandler):
     
     def get(self):

@@ -14,6 +14,7 @@ class Route(object):
         self.host = host
 
     def __call__(self, handler_class):
+        print'__call__'
         spec = url(self.pattern, handler_class, self.kwargs, name=self.name)
         self._routes.setdefault(self.host, []).append(spec)
         return handler_class
