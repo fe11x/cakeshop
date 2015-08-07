@@ -10,7 +10,7 @@ from lib.database import Db
 from lib import uimodules
 import memcache
 
-settings = setting_from_object(setting)
+settings = setting_from_object(setting)            # 在bootloader中将settings.py中的配置转换成一个dict，供manager.py使用
 
 settings.update({
         'template_path':os.path.join(os.path.dirname(__file__), 'template'),

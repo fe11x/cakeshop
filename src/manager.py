@@ -8,7 +8,7 @@ import tornado.web
 from tornado.httpserver import HTTPServer
 from tornado.options import define, parse_command_line, options
 
-from bootloader import settings, jinja_environment, memcachedb
+from bootloader import settings, jinja_environment, memcachedb  #  settings.py -> bootloader.py -> manager.py
 from lib.filter import register_filters
 from lib.route import Route
 from lib.session import MemcacheSessionStore
@@ -24,7 +24,7 @@ class Application(tornado.web.Application):
         self.jinja_env.tests.update({})
         self.jinja_env.globals['settings'] = settings
         
-        self.memcachedb = memcachedb
+        self.memcachedb = memcachedb                            # 设置memcache
         self.session_store = MemcacheSessionStore(memcachedb)
         
         handlers = [
@@ -104,4 +104,3 @@ if __name__ == '__main__':
         syncdb()
     else:
         runserver()
-    
